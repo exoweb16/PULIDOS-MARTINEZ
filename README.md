@@ -1,6 +1,7 @@
 # PULIDOS-MARTINEZ
 Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado profundo de cerámicas. Devolvemos la elegancia y el acabado espejo a tus espacios residenciales y comerciales.
-<!DOCTYPE html>
+
+  <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +9,7 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
     <title>Pulidos Martínez | Pulido de Pisos y Superficies</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Variables de color basadas en las imágenes */
+        /* Variables de color */
         :root {
             --azul-marino: #122B49;
             --azul-claro: #1D4575;
@@ -27,7 +28,9 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
             scroll-behavior: smooth;
         }
 
-        body {
+        html, body {
+            width: 100%;
+            overflow-x: hidden; /* Evita desplazamiento horizontal en celulares */
             background-color: var(--gris-fondo);
             color: var(--texto-oscuro);
             line-height: 1.6;
@@ -46,6 +49,7 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             border-bottom: 4px solid var(--amarillo-acento);
+            width: 100%;
         }
 
         .logo {
@@ -54,7 +58,7 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
             letter-spacing: 1px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .logo span {
@@ -86,7 +90,11 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
             color: var(--blanco);
             text-align: center;
             padding: 100px 20px;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
         }
 
         .hero h1 {
@@ -102,6 +110,7 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
             color: var(--amarillo-acento);
             font-weight: 700;
             margin-bottom: 20px;
+            max-width: 800px;
         }
 
         .hero p.descripcion {
@@ -114,8 +123,10 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
         .btn-grupo {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 15px;
             flex-wrap: wrap;
+            width: 100%;
         }
 
         .btn {
@@ -127,6 +138,7 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
             transition: transform 0.2s, background-color 0.3s;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
         }
 
@@ -148,6 +160,7 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
         .servicios {
             padding: 80px 5%;
             max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
         }
 
@@ -172,8 +185,9 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
 
         .grid-servicios {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
+            width: 100%;
         }
 
         .tarjeta-servicio {
@@ -210,6 +224,7 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
             color: var(--blanco);
             padding: 60px 5%;
             text-align: center;
+            width: 100%;
         }
 
         .destacado h2 {
@@ -227,6 +242,7 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
         .contacto {
             padding: 80px 5%;
             max-width: 1000px;
+            width: 100%;
             margin: 0 auto;
         }
 
@@ -237,6 +253,7 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             display: grid;
             grid-template-columns: 1fr 1fr;
+            width: 100%;
         }
 
         .info-contacto {
@@ -340,13 +357,14 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
             padding: 25px 20px;
             font-size: 0.9rem;
             border-top: 4px solid var(--amarillo-acento);
+            width: 100%;
         }
 
         /* Botón Flotante de WhatsApp */
         .whatsapp-float {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
+            bottom: 20px;
+            right: 20px;
             background-color: var(--verde-whatsapp);
             color: var(--blanco);
             width: 60px;
@@ -366,11 +384,61 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
             transform: scale(1.1);
         }
 
-        /* Responsivo para celulares */
+        /* Responsivo para Tabletas (hasta 992px) */
+        @media (max-width: 992px) {
+            .contenedor-contacto {
+                grid-template-columns: 1fr;
+            }
+            .info-contacto {
+                text-align: center;
+            }
+        }
+
+        /* Responsivo para Celulares (hasta 768px) */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .contenedor-contacto { grid-template-columns: 1fr; }
-            nav ul { display: none; }
+            header {
+                justify-content: center; /* Centra el logo en móviles */
+                padding: 1rem 15px;
+            }
+            nav ul {
+                display: none;
+            }
+            .hero {
+                padding: 70px 15px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p.eslogan {
+                font-size: 1.15rem;
+            }
+            .hero p.descripcion {
+                font-size: 1rem;
+            }
+            .btn-grupo {
+                flex-direction: column;
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+            .btn {
+                width: 100%;
+            }
+            .titulo-seccion h2 {
+                font-size: 1.8rem;
+            }
+            .tarjeta-servicio {
+                text-align: center;
+            }
+            .tarjeta-servicio h3 {
+                justify-content: center;
+            }
+            .info-contacto, .formulario-contacto {
+                padding: 30px 20px;
+            }
+            .formulario-contacto h4 {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -378,7 +446,7 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
 
     <header>
         <div class="logo">
-            PULIDOS <span>MARTÍNEZ
+            PULIDOS <span>MARTÍNEZ</span>
         </div>
         <nav>
             <ul>
@@ -390,10 +458,10 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
     </header>
 
     <section id="inicio" class="hero">
-        <h1>Pulidos Martìnez </h1>
+        <h1>Pulidos Martínez</h1>
         <p class="eslogan">Tu mejor opción en restauración y brillo de pisos</p>
         <p class="descripcion">
-            Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado profundo de cerámicas.Devolvemos la elegancia y el acabado espejo a tus espacios residenciales y comerciales.
+            Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado profundo de cerámicas. Devolvemos la elegancia y el acabado espejo a tus espacios residenciales y comerciales.
         </p>
         <div class="btn-grupo">
             <a href="https://wa.me/525611736651?text=Hola%20Christian,%20me%20interesa%20cotizar%20un%20trabajo%20de%20pulido." target="_blank" class="btn btn-whatsapp">
@@ -447,7 +515,7 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
     <section class="destacado">
         <h2>Resultados Garantizados en Cada Proyecto</h2>
         <p>
-            Atención personalizada directamente por <strong>Christian Martínez</strong> Utilizamos equipo profesional y productos de primera calidad para cuidar tu patrimonio.
+            Atención personalizada directamente por <strong>Christian Martínez</strong>. Utilizamos equipo profesional y productos de primera calidad para cuidar tu patrimonio.
         </p>
     </section>
 
@@ -464,12 +532,13 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
 
                 <div class="dato-item">
                     <strong>Teléfono Directo</strong>
-                    <a href="tel:5645576656">56 4557 6656</a>)
+                    <a href="tel:5645576656">56 4557 6656</a>
                 </div>
 
                 <div class="dato-item">
                     <strong>WhatsApp</strong>
                     <a href="https://wa.me/525611736651" target="_blank">56 1173 6651</a>
+                </div>
 
                 <div class="dato-item">
                     <strong>Especialidades</strong>
@@ -496,7 +565,7 @@ Especialistas en trabajos en mármol, cantera, granito, terrazo, madera y lavado
                             <option value="marmol">Mármol</option>
                             <option value="cantera">Cantera</option>
                             <option value="granito">Granito</option>
-                            <option value="terrazo"></option>
+                            <option value="terrazo">Terrazo</option>
                             <option value="madera">Madera</option>
                             <option value="ceramica">Lavado de Cerámica</option>
                         </select>
